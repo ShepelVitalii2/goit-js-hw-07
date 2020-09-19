@@ -1,0 +1,32 @@
+#gallery {
+  display: flex;
+}
+
+.js-list {
+  list-style: none;
+}
+
+.js-img {
+  width: auto;
+  height: 250px;
+
+  border: 1px solid blueviolet;
+  border-radius: 5%;
+}
+.js-list:nth-last-child(-n + 3) {
+  margin-right: 70px;
+}
+
+/****************************************************/
+
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: blue;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
