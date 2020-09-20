@@ -5,8 +5,7 @@ inputNameRef.addEventListener("input", onInputChanges);
 const emptyString = "";
 
 function onInputChanges(event) {
-  if (event.currentTarget.value === emptyString) {
-    outputNameRef.textContent = "Незнакомец";
-  }
-  outputNameRef.textContent = event.currentTarget.value;
+  event.currentTarget.value === emptyString
+    ? (outputNameRef.textContent = "Незнакомец")
+    : (outputNameRef.textContent = event.currentTarget.value);
 }

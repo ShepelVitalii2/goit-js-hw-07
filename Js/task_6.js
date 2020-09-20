@@ -3,9 +3,11 @@ const inputValidLength = +inputValidationRef.dataset.length; // справа п�
 inputValidationRef.addEventListener("blur", onLengthCheck);
 
 function onLengthCheck(event) {
-  return event.currentTarget.value.length === inputValidLength
-    ? inputValidationRef.classList.add("valid") +
-        inputValidationRef.classList.remove("invalid")
-    : inputValidationRef.classList.add("invalid") +
-        inputValidationRef.classList.remove("valid");
+  if (event.currentTarget.value.length === inputValidLength) {
+    inputValidationRef.classList.add("valid") +
+      inputValidationRef.classList.remove("invalid");
+  } else {
+    inputValidationRef.classList.add("invalid") +
+      inputValidationRef.classList.remove("valid");
+  }
 }

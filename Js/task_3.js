@@ -17,8 +17,21 @@ const images = [
 ];
 
 const galleryRef = document.querySelector("#gallery");
+galleryRef.classList.add("js-gallery");
 const imageClass = "js-img";
 const listClass = "js-list";
+
+const createImgGallery = (image) => {
+  return image.reduce(
+    (acc, { url, alt }) =>
+      acc +
+      `<li class = '${listClass}'><img class = '${imageClass}'src = '${url}' alt = '${alt}'></li>`,
+    ""
+  );
+};
+
+const imgGallery = createImgGallery(images);
+galleryRef.insertAdjacentHTML("afterbegin", imgGallery);
 
 // for (const image of images) {
 //   galleryRef.insertAdjacentHTML(
@@ -27,9 +40,9 @@ const listClass = "js-list";
 //   );
 // }
 
-const dynamicImagesArray = images.forEach((image) =>
-  galleryRef.insertAdjacentHTML(
-    "beforeend",
-    `<li class = '${listClass}'><img class = '${imageClass}'src = '${image.url}' alt = '${image.alt}'></li>`
-  )
-);
+// const dynamicImagesArray = images.forEach((image) =>
+//   galleryRef.insertAdjacentHTML(
+//     "beforeend",
+//     `<li class = '${listClass}'><img class = '${imageClass}'src = '${image.url}' alt = '${image.alt}'></li>`
+//   )
+// );
