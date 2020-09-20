@@ -4,10 +4,11 @@ inputValidationRef.addEventListener("blur", onLengthCheck);
 
 function onLengthCheck(event) {
   if (event.currentTarget.value.length === inputValidLength) {
-    inputValidationRef.classList.add("valid") +
-      inputValidationRef.classList.remove("invalid");
+    // когда использовал тернарник, пытался связать 2 операции. При изменении на ифЭлс проверил на валидность, и не проверил синтаксис. Спасибо!
+    inputValidationRef.classList.add("valid");
+    inputValidationRef.classList.remove("invalid");
   } else {
-    inputValidationRef.classList.add("invalid") +
-      inputValidationRef.classList.remove("valid");
+    inputValidationRef.classList.add("invalid");
+    inputValidationRef.classList.remove("valid");
   }
 }
